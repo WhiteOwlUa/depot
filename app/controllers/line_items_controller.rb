@@ -1,14 +1,6 @@
-#---
-# Excerpted from "Agile Web Development with Rails",
-# published by The Pragmatic Bookshelf.
-# Copyrights apply to this code. It may not be used to create training material, 
-# courses, books, articles, and the like. Contact us if you are in doubt.
-# We make no guarantees that this code is fit for any purpose. 
-# Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
-#---
 class LineItemsController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:create]
+  before_action :set_cart
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
 
   # GET /line_items
@@ -55,8 +47,13 @@ class LineItemsController < ApplicationController
   # PATCH/PUT /line_items/1
   # PATCH/PUT /line_items/1.json
   def update
-    @line_item.update(line_item_update_params)
-    redirect_to store_url  
+    # binding.pry
+    # @line_item.update(line_item_update_params)
+
+    # if / else
+    # @l.update_attributes(quantity: +/-)
+
+    # redirect_to store_url
     # respond_to do |format|
     #   if @line_item.update(line_item_update_params)
     #     format.html { redirect_to @line_item, notice: 'Line item was successfully updated.' }
@@ -90,7 +87,7 @@ class LineItemsController < ApplicationController
   def line_item_params
       params.require(:line_item).permit(:product_id)
   end
-  
+
   def line_item_update_params
     params.require(:line_item).permit(:quantity)
   end

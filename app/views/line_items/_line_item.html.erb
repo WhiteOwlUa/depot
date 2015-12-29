@@ -5,11 +5,17 @@
 <tr>
 <% end %>
 <!-- END_HIGHLIGHT -->
-  <td>
+  <td id="line_items_quantity">
   	<%= line_item.quantity %>&times;
   </td>
   <td><%= line_item.product.title %></td>
 
-  <td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
-  <td><%= button_to 'del', line_item, method: :delete %></td>
+  <td class="item_price">
+    <%= number_to_currency(line_item.total_price) %>
+    <%= link_to '-', line_item_path(line_item, action: :minus), method: :put %>
+    <%= link_to '+', line_item_path(line_item, action: :plus), method: :put %>
+
+    <%= button_to 'X', line_item, method: :delete %>
+  </td>
+
  </tr>
