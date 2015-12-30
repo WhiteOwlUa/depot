@@ -12,8 +12,8 @@
 
   <td class="item_price">
     <%= number_to_currency(line_item.total_price) %>
-    <%= link_to '-', line_item_path(line_item, action: :minus), method: :put %>
-    <%= link_to '+', line_item_path(line_item, action: :plus), method: :put %>
+    <%= button_to '-', line_item_path(line_item, todo: :minus), method: :put, remote: true  %>
+    <%= button_to '+', line_item_path(line_item, todo: :plus), method: :put, remote: true  %>
 
     <%= button_to 'X', line_item, method: :delete %>
   </td>

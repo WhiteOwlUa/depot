@@ -17,13 +17,21 @@ class Cart < ActiveRecord::Base
       current_item = line_items.build(product_id: product_id)
       current_item.price = current_item.product.price
     end
+
     current_item
   end
 
-  def remove_product(line_item)
+  def minus_quantity(line_item)
     line_item.quantity -= 1
     line_item
   end
+  
+  def plus_quantity(line_item)
+    line_item.quantity += 1
+    #binding.pry
+    line_item
+  end
+
 
   def total_price
     line_items.to_a.sum { |item| item.total_price }
