@@ -8,14 +8,15 @@
   <td id="line_items_quantity">
   	<%= line_item.quantity %>&times;
   </td>
-  <td><%= line_item.product.title %></td>
+  <td><%= line_item.product.title %>
+  
+  	 <%= button_to '-', line_item_path(line_item, todo: :minus), method: :put, remote: true  %>
+    <%= button_to '+', line_item_path(line_item, todo: :plus), method: :put, remote: true  %>
+    </td>
 
   <td class="item_price">
     <%= number_to_currency(line_item.total_price) %>
-    <%= button_to '-', line_item_path(line_item, todo: :minus), method: :put, remote: true  %>
-    <%= button_to '+', line_item_path(line_item, todo: :plus), method: :put, remote: true  %>
-
-    <%= button_to 'X', line_item, method: :delete %>
+   <%= button_to 'X', line_item, method: :delete %>
   </td>
 
  </tr>

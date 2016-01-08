@@ -44,7 +44,7 @@ class LineItemsControllerTest < ActionController::TestCase
 
   test "should update line_item" do
     patch :update, id: @line_item, line_item: { product_id: @line_item.product_id }
-    assert_redirected_to line_item_path(assigns(:line_item))
+    assert_redirected_to store_path
   end
 
   test "should destroy line_item" do
@@ -65,4 +65,23 @@ class LineItemsControllerTest < ActionController::TestCase
       assert_select 'tr#current_item td', /Programming Ruby 1.9/
     end
   end
+  test "should minus line_item quantity" do
+
+  patch :update, id: @line_item, line_item: @line_item, quantity: 22
+  assert_difference('@line_item .quantity', +1) do
+
+   #  assert_difference('@line_item .quantity', -1) do
+   
+#    assert_select('LineItem.last') do
+   # assert_difference('LineItem.quantity', -1) do
+#      xhr :put, :update, line_item: @line_item, todo: "plus"
+    #end 
+   end 
+   end
+    #assert_response :success
+  #  assert_select_jquery :html, '#cart' do
+   #   assert_select 'tr#current_item td', /Programming Ruby 1.9/
+   # end
+  
+
 end

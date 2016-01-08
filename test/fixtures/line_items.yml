@@ -3,10 +3,13 @@
 
 one:
   product: ruby
+  quantity: 21
 #START_HIGHLIGHT
   order: one
 #END_HIGHLIGHT
 
 two:
   product: ruby
+  quantity: 31
+  
   cart: one

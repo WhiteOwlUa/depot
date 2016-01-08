@@ -28,7 +28,6 @@ class Cart < ActiveRecord::Base
   
   def plus_quantity(line_item)
     line_item.quantity += 1
-    #binding.pry
     line_item
   end
 
