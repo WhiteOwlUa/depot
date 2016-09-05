@@ -6,7 +6,7 @@
 
 <% cache ['store', Product.latest] do %>
   <% @products.where("locale = '#{I18n.locale.to_s}'").find_each do |product| %>
-
+    binding.pry
     <% cache ['entry', product] do %>
       <div class="entry">
         <%= image_tag(product.image_url) %>
