@@ -46,7 +46,7 @@ Product.create!(title: 'Rails Test Prescriptions',
   image_url: 'rtp.jpg',
   locale: 'en',
   price: 34.95)
-Product.create!(title: 'CoffeeScript',
+Product.create!(title: 'RU_CoffeeScript',
   description: 
     %{<p>
         CoffeeScript is JavaScript done right. It provides all of JavaScript's
@@ -59,7 +59,7 @@ Product.create!(title: 'CoffeeScript',
   locale: 'ru',
   price: 36.00)
 # . . .
-Product.create!(title: 'Programming Ruby 1.9 & 2.0',
+Product.create!(title: 'RU_Programming Ruby 1.9 & 2.0',
   description:
     %{<p>
         Ruby is the fastest growing and most exciting dynamic language
@@ -71,7 +71,7 @@ Product.create!(title: 'Programming Ruby 1.9 & 2.0',
   price: 49.95)
 # . . .
 
-Product.create!(title: 'Rails Test Prescriptions',
+Product.create!(title: 'RU_Rails Test Prescriptions',
   description: 
     %{<p>
         <em>Rails Test Prescriptions</em> is a comprehensive guide to testing
